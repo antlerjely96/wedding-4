@@ -1,65 +1,71 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+import HeroEnvelope from '@/components/HeroEnvelope';
+import CoupleIntro from '@/components/CoupleIntro';
+import FamilyInfo from '@/components/FamilyInfo';
+import EventCard from '@/components/EventCard';
+import Album from '@/components/Album';
+// import MapSection from '@/components/MapSection';
+import RsvpForm from '@/components/RsvpForm';
+import Footer from '@/components/Footer';
+import MusicPlayer from "@/components/MusicPlayer";
+
+export default function WeddingInvite() {
+    return (
+        <main className="min-h-screen bg-[#F7E6CA] pb-0 overflow-x-hidden">
+            {/* 1. Mở đầu */}
+            <HeroEnvelope />
+
+            {/* 2. Giới thiệu Cô Dâu - Chú Rể (Dạng nền ảnh như bạn đã chọn) */}
+            <CoupleIntro />
+
+            {/* 3. Lễ Chính (Lễ Vu Quy) */}
+            {/* Thường lễ chính sẽ nằm ngay sau phần giới thiệu tên */}
+            <div className="mt-12 mb-8">
+                <EventCard
+                    title="Lễ Thành Hôn"
+                    time="13h30"
+                    lunarDate="Thứ 7, ngày 10 tháng 1 năm 2026"
+                    locationName="Tại Tư Gia Của Nhà Trai"
+                    address="25 ngõ 662, phố 30/6, Phường Vân Giang, Phường Nam Hoa Lư, Ninh Bình"
+                    showCalendar={true}
+
+                    mapLink='https://www.google.com/maps/place/Ch%C3%BA+Th%C3%A0nh/@20.2263821,105.9674067,199m/data=!3m1!1e3!4m6!3m5!1s0x31367b00409ad61b:0x1d97575ffb4350d!8m2!3d20.2262962!4d105.9674409!16s%2Fg%2F11ldcv7fdx!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D'
+                    mapEmbed='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d867.6994507907116!2d105.96740671916265!3d20.22638214719992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31367b00409ad61b%3A0x1d97575ffb4350d!2zQ2jDuiBUaMOgbmg!5e1!3m2!1svi!2s!4v1766724953465!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"'
+                />
+            </div>
+
+            {/* --- BẮT ĐẦU KHU VỰC ĐỔI CHỖ --- */}
+
+            {/* 4. Tiệc Thân Mật (Đã đổi lên TRÊN FamilyInfo) */}
+            <EventCard
+                title="Tham Dự Tiệc Thân Mật"
+                time="16:00"
+                lunarDate="Thứ 6, ngày 9 tháng 1 năm 2026"
+                locationName="Tư gia nhà trai"
+                address="25 ngõ 662, đường 30/6, phố Vân Giang, phường Nam Hoa Lư, Ninh Bình"
+                showCalendar={false}
+
+                mapLink='https://www.google.com/maps/place/Ch%C3%BA+Th%C3%A0nh/@20.2263821,105.9674067,199m/data=!3m1!1e3!4m6!3m5!1s0x31367b00409ad61b:0x1d97575ffb4350d!8m2!3d20.2262962!4d105.9674409!16s%2Fg%2F11ldcv7fdx!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D'
+                mapEmbed='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d867.6994507907116!2d105.96740671916265!3d20.22638214719992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31367b00409ad61b%3A0x1d97575ffb4350d!2zQ2jDuiBUaMOgbmg!5e1!3m2!1svi!2s!4v1766724953465!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"'
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+            {/* 5. Gia đình (Đã đổi xuống DƯỚI Tiệc Thân Mật) */}
+            <FamilyInfo />
+
+            {/* --- KẾT THÚC KHU VỰC ĐỔI CHỖ --- */}
+
+            {/* 6. Album Ảnh */}
+            <Album />
+
+            {/* 7. Bản Đồ */}
+            {/*<MapSection />*/}
+
+            {/* 8. RSVP & Footer */}
+            <RsvpForm />
+            <Footer />
+            <MusicPlayer />
+
+        </main>
+    );
 }
