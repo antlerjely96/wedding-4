@@ -9,7 +9,7 @@ import DataTable from '@/components/DataTable';
 // import DataTable from '../../components/DataTable';
 
 // URL Backend (Đảm bảo đúng link Render của bạn)
-const API_BASE = 'https://wedding-3-backend.onrender.com/api/rsvp-form';
+const API_BASE = 'https://wedding-3-backend.onrender.com/api/rsvp';
 
 // Định nghĩa kiểu dữ liệu cho Khách mời (để TypeScript không báo lỗi)
 interface Guest {
