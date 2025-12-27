@@ -40,8 +40,8 @@ export default function WeddingInvite() {
             {/* 4. Tiệc Thân Mật (Đã đổi lên TRÊN FamilyInfo) */}
             <EventCard
                 title="Tham Dự Tiệc Thân Mật"
-                time="16:00"
-                lunarDate="Thứ 6, ngày 9 tháng 1 năm 2026"
+                time="14:30"
+                lunarDate="Thứ 7, ngày 10 tháng 1 năm 2026"
                 locationName="Tư gia nhà trai"
                 address="25 ngõ 662, đường 30/6, phố Vân Giang, phường Nam Hoa Lư, Ninh Bình"
                 showCalendar={false}
